@@ -11,4 +11,4 @@ const getDayNumber = (day) => {
   return daysNumber[day];
 }
 
-export { getDayNumber }
+module.exports = { getDayNumber }

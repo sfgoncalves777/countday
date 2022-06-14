@@ -1,4 +1,4 @@
-import { formatDate } from './formatDate';
+const { formatDate } = require('./formatDate');
 
 const countDays = (dayNumber, infoInitialDate, infoFinalDate) => {
   let currentDate = formatDate(infoInitialDate);
@@ -14,4 +14,4 @@ const countDays = (dayNumber, infoInitialDate, infoFinalDate) => {
   return dayCounter
 }
 
-export { countDays };
+module.exports = { countDays };

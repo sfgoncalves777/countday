@@ -1,4 +1,4 @@
-import { getDayNumber, countDays } from './services';
+const { getDayNumber, countDays } = require('./services');
 
 const day = process.argv[2];
 const initialDate = process.argv[3]

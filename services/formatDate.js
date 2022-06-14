@@ -7,4 +7,4 @@ const formatDate = (infoDate) => {
   return Date.parse(date);
 }
 
-export { formatDate };
+module.exports = { formatDate };

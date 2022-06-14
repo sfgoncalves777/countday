@@ -1,4 +1,4 @@
-import { getDayNumber } from './getDayNumber';
-import { countDays } from './countDays';
+const { getDayNumber } = require('./getDayNumber');
+const { countDays } = require('./countDays');
 
-export { getDayNumber, countDays };
+module.exports =  { getDayNumber, countDays };
