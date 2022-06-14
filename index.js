@@ -11,31 +11,20 @@ const getDayNumber = (day) => {
   return daysNumber[day];
 }
 
-const formatInitialDate = (initialDate) => {
-  if (initialDate) {
-    const initialDateSplit = initialDate.split('/');
-    const day = initialDateSplit[0];
-    const month = initialDateSplit[1];
-    const year = initialDateSplit[2];
-    const dateInitial = new Date(year, month - 1, day).toISOString();
-    return Date.parse(dateInitial);
-  }
-  return Date.now();
+const formatDate = (infoDate) => {
+  const infoDateSplit = infoDate.split('/');
+  const day = infoDateSplit[0];
+  const month = infoDateSplit[1];
+  const year = infoDateSplit[2];
+  const date = new Date(year, month - 1, day).toISOString();
+  return Date.parse(date);
 }
 
-const getTimestampFinalYear = () => {
-  const dayFinalYeary = new Date(new Date().getFullYear(), 11, 31).toISOString();
-  return Date.parse(dayFinalYeary);
-};
-
-const countDays = (dayNumber, initialDate) => {
-  if (!dayNumber) {
-    return 'Not found dayNumber'
-  } 
-  let currentDate = formatInitialDate(initialDate);
-  const timestampFinalYear = getTimestampFinalYear();
+const countDays = (dayNumber, infoInitialDate, infoFinalDate) => {
+  let currentDate = formatDate(infoInitialDate);
+  const timestampFinal = formatDate(infoFinalDate);
   let dayCounter = 0;
-  while(currentDate < timestampFinalYear) {
+  while(currentDate < timestampFinal) {
     const day = new Date(currentDate);
     if (day.getDay() === dayNumber) {
       dayCounter += 1;
@@ -47,6 +36,10 @@ const countDays = (dayNumber, initialDate) => {
 
 const day = process.argv[2];
 const initialDate = process.argv[3]
+const finalDate = process.argv[4];
+if (!day || !initialDate || !finalDate) { 
+  return console.log({ err: 'É necessário informar todas as informações (dia, data inicial, data final).' })
+}
 const dayNumber = getDayNumber(day);
-const countDay = countDays(dayNumber, initialDate);
+const countDay = countDays(dayNumber, initialDate, finalDate);
 console.log(countDay);
