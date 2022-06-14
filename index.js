@@ -1,12 +1,12 @@
 const getDayNumber = (day) => {
   const daysNumber = {
-    'seg': 3,
-    'ter': 4,
-    'qua': 5,
-    'qui': 6,
-    'sex': 0,
-    'sab': 1,
-    'dom': 2
+    'dom': 0,
+    'seg': 1,
+    'ter': 2,
+    'qua': 3,
+    'qui': 4,
+    'sex': 5,
+    'sab': 6,
   }
   return daysNumber[day];
 }
