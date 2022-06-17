@@ -1,11 +1,12 @@
-const { getDayNumber, countDays } = require('./services');
+const { countDays } = require('./services');
 
-const day = process.argv[2];
-const initialDate = process.argv[3]
-const finalDate = process.argv[4];
-if (!day || !initialDate || !finalDate) { 
-  return console.log({ err: 'É necessário informar todas as informações (dia, data inicial, data final).' })
+const initialDate = process.argv[2]
+const finalDate = process.argv[3];
+const day = process.argv[4];
+
+if (!initialDate || !finalDate) { 
+  return console.log({ err: 'É necessário informar as informações obrigatórias (data inicial, data final).' })
 }
-const dayNumber = getDayNumber(day);
-const countDay = countDays(dayNumber, initialDate, finalDate);
+
+const countDay = countDays(initialDate, finalDate, day);
 console.log(countDay);
