@@ -1,4 +1,7 @@
-const getDayNumber = (day) => {
+const getDayNumber = (days) => {
+  if (!days) {
+    return;
+  }
   const daysNumber = {
     'dom': 0,
     'seg': 1,
@@ -8,7 +11,12 @@ const getDayNumber = (day) => {
     'sex': 5,
     'sab': 6,
   }
-  return daysNumber[day];
+  const daysSplit = days.split(',');
+  const daysNumbers = [];
+  for(let day of daysSplit) {
+    daysNumbers.push(daysNumber[day]);
+  }
+  return daysNumbers;
 }
 
 module.exports = { getDayNumber }
