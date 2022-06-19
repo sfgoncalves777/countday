@@ -6,7 +6,7 @@ O countday é um projeto que calcula a quantidade de dias da semana terá dentro
 ### Para utilizar a ferramenta:
 - Faça o git clone do projeto
 - Vá até a raiz do projeto
-- Rode o script `npm start` com a flag do dia da semana desejado, ex: `seg`; data inicial, ex: `01/01/2022`; data final, ex `31/12/2022`. 
+- Rode o script `npm start` com a flag da data inicial, ex: `01/01/2022`; data final, ex: `31/12/2022`. Também é possível calcular dias da semana específicos, por ex: `seg,ter` podendo ser um ou mais dias.  
 
 ## 🚀 Tecnologias
 
